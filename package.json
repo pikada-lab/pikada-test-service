@@ -1,0 +1,14 @@
+{
+    "name": "pikada-test-service",
+    "version": "1.0.2",
+    "description": "Микросервис тест взаимодействия",
+    "license": "SEE LICENSE IN LICENSE.md",
+    "keywords": [
+        "TEST"
+    ],
+    "author": "Anton Dzhigurda",
+    "dependencies": {
+        "express": "^4.16.4",
+        "socket.io": "^2.2.0"
+    }
+}
