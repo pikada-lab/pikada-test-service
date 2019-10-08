@@ -15,6 +15,7 @@
     },
     "author": "Anton Dzhigurda",
     "dependencies": {
+        "amqplib": "^0.5.5",
         "express": "^4.16.4",
         "socket.io": "^2.2.0"
     }
