@@ -1,11 +1,18 @@
 {
     "name": "pikada-test-service",
-    "version": "1.0.2",
+    "version": "1.0.4",
     "description": "Микросервис тест взаимодействия",
     "license": "SEE LICENSE IN LICENSE.md",
     "keywords": [
         "TEST"
     ],
+    "scripts": {
+        "start": "node index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:pikada-lab/pikada-test-service.git"
+    },
     "author": "Anton Dzhigurda",
     "dependencies": {
         "express": "^4.16.4",
