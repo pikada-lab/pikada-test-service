@@ -9,3 +9,7 @@ module.exports.getSecondName = () => {
     "Владимирович", "Даниилович","Георгиевич","Александрович", "Павлович","Кирилович"];
     return names[Math.floor(Math.random() * (names.length))];
 }
+
+module.exports.getFullName = () => {
+    return this.getName() + " " + this.getSecondName();
+}
