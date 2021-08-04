@@ -8,11 +8,11 @@ chai.use(chaiHttp);
 let agent = chai.request.agent(server);
 describe('Health', () => { 
 
-    afterEach(function (done) { 
+    after(function (done) { 
         agent.close();
         done();
     });
-    describe('/GET health point', () => {
+    describe('[GET] /v1/health', () => {
         it('it should GET 0', (done) => {
             agent
                 .get('/v1/health')
@@ -21,6 +21,19 @@ describe('Health', () => {
                     expect(res, "We have not status 200").to.have.status(200);
                     expect(res, "The response mast be not a php session").to.not.have.cookie('PHPSESSID');
                     expect(res.text, "The response mast be equal 0").to.be.equal("0");
+                    done();
+                });
+        });
+    });
+    describe('[GET] /v1/name', () => {
+        it('it should GET name', (done) => {
+            agent
+                .get('/v1/name')
+                .end((err, res) => {
+                    expect(err, "We have error").to.be.null;
+                    expect(res, "We have not status 200").to.have.status(200);
+                    expect(res, "The response mast be not a php session").to.not.have.cookie('PHPSESSID'); 
+                    expect(res, "We have error").to.be.string;
                     done();
                 });
         });
