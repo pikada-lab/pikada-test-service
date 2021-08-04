@@ -10,23 +10,6 @@ app.use((req, res, next) => {
     next()
 })
 
-// amqp.connect('amqp://localhost', function(error0, connection) {
-//     if (error0) throw error0;
-//     console.log('[*] Доступно подключение rebbitmq: 127.0.0.1:5672')
-//     connection.createChannel(function(error1, channel) {
-//         if (error1) throw error1;
-//         var queue = 'hello';
-//         channel.assertQueue(queue, {
-//             durable: false
-//         });
-//         setInterval(() => {
-//             var msg = 'Hello world ' + Math.round(Math.random() * 5 + 1);
-//             channel.sendToQueue(queue, Buffer.from(msg));
-//         }, 1000);
-//     });
-
-// });
-
 app.get('/v1/health', (req, res) => {
     res.send('0')
 })
