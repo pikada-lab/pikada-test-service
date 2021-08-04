@@ -5,13 +5,16 @@ let chaiHttp = require('chai-http');
 const { server } = require("./index");
 chai.use(chaiHttp);
 
-describe('Health', () => {
-    after(() => {
-        process.kill(0);
+let agent = chai.request.agent(server);
+describe('Health', () => { 
+
+    afterEach(function (done) { 
+        agent.close();
+        done();
     });
     describe('/GET health point', () => {
         it('it should GET 0', (done) => {
-            chai.request(server)
+            agent
                 .get('/v1/health')
                 .end((err, res) => {
                     expect(err, "We have error").to.be.null;
