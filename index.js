@@ -1,5 +1,6 @@
 const express = require('express');
-const app = express(); 
+const app = express();
+const { getName } = require("./Naming");  
 
 app.set('port', 3000);
 app.use((req, res, next) => {
@@ -15,6 +16,9 @@ app.get('/v1/health', (req, res) => {
 
 app.get('/', (req, res) => {
     res.send('REST API Сервер, Текущая версия V1.0.5');
+});
+app.get('/v1/name', (req, res) => {
+    res.send(getName());
 });
 const clb = () => {
     console.log('[*] Доступно подключение по адресу: http://127.0.0.1:' + app.get('port'));
