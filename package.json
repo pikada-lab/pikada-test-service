@@ -7,7 +7,8 @@
         "TEST"
     ],
     "scripts": {
-        "start": "node index.js"
+        "start": "node index.js",
+        "test": "mocha  --timeout 10000"
     },
     "repository": {
         "type": "git",
@@ -15,8 +16,12 @@
     },
     "author": "Anton Dzhigurda",
     "dependencies": {
-        "amqplib": "^0.5.5",
-        "express": "^4.16.4",
+        "express": "^4.17.1",
         "socket.io": "^2.2.0"
+    },
+    "devDependencies": {
+        "chai": "^4.3.4",
+        "chai-http": "^4.3.0",
+        "mocha": "^9.0.3"
     }
 }
