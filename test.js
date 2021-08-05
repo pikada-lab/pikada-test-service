@@ -38,4 +38,18 @@ describe('Health', () => {
                 });
         });
     });
+    describe('[GET] /v1/name?fullName', () => {
+        it('it should GET name and first name', (done) => {
+            agent
+                .get('/v1/name?fullName')
+                .end((err, res) => {
+                    expect(err, "We have error").to.be.null;
+                    expect(res, "We have not status 200").to.have.status(200);
+                    expect(res, "The response mast be not a php session").to.not.have.cookie('PHPSESSID'); 
+                    expect(res, "We have error").to.be.string;  
+                    expect(res).to.be.match(/(\w+)\s(\w+)/i, "We have two words");
+                    done();
+                });
+        });
+    });
 });
