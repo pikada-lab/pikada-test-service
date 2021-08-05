@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const { getName } = require("./Naming");  
+const { getName, getFullName } = require("./Naming");  
 
 app.set('port', 3000);
 app.use((req, res, next) => {
@@ -18,8 +18,14 @@ app.get('/', (req, res) => {
     res.send('REST API Сервер, Текущая версия V1.0.5');
 });
 app.get('/v1/name', (req, res) => {
-    res.send(getName());
+    const params = new URL(req.url,'http://localhost').searchParams;
+    if(params.has("fullName")) {
+        res.send(getFullName());
+    } else {
+        res.send(getName());
+    }
 });
+
 const clb = () => {
     console.log('[*] Доступно подключение по адресу: http://127.0.0.1:' + app.get('port'));
 };
