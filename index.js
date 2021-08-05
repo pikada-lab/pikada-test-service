@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const { getName, getFullName } = require("./Naming");  
 
-app.set('port', 3000);
+app.set('port', process.env.PORT || 3000);
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
