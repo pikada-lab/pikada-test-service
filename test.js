@@ -3,6 +3,7 @@ const { expect } = require('chai');
 let chai = require('chai');
 let chaiHttp = require('chai-http');
 const { server } = require("./index");
+const { NAME, LAST_NAME, SECOND_NAME } = require('./Naming');
 chai.use(chaiHttp);
 
 let agent = chai.request.agent(server);
@@ -48,6 +49,7 @@ describe('Health', () => {
                     expect(res, "The response mast be not a php session").to.not.have.cookie('PHPSESSID'); 
                     expect(res, "We have error").to.be.string;  
                     expect(res).to.be.match(/(\w+)\s(\w+)/i, "We have two words");
+                    expect(~NAME.findIndex(r => r === res), "It is not name");
                     done();
                 });
         });
@@ -63,6 +65,7 @@ describe('Health', () => {
                     expect(res, "The response mast be not a php session").to.not.have.cookie('PHPSESSID'); 
                     expect(res, "We have error").to.be.string;  
                     expect(res).to.be.match(/(\w+)/i, "We have two words");
+                    expect(~LAST_NAME.findIndex(r => r === res), "It is not name");
                     done();
                 });
         });
@@ -78,6 +81,7 @@ describe('Health', () => {
                     expect(res, "The response mast be not a php session").to.not.have.cookie('PHPSESSID'); 
                     expect(res, "We have error").to.be.string;  
                     expect(res).to.be.match(/(\w+)/i, "We have two words");
+                    expect(~SECOND_NAME.findIndex(r => r === res), "It is not name");
                     done();
                 });
         });

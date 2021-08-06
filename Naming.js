@@ -12,21 +12,21 @@ const random = (arr) => {
 };
 
 module.exports.getName = () => {
-    return random(NAME);
+    return random(this.NAME);
 };
 
 module.exports.getSecondName = () => {
-    return random(SECOND_NAME);
+    return random(this.SECOND_NAME);
 };
 
 module.exports.getLastName = () => {
-    return random(LAST_NAME);
+    return random(this.LAST_NAME);
 };
 
 module.exports.getFullName = () => {
-    return getName() + " " + getSecondName();
+    return this.getName() + " " + this.getSecondName();
 };
 
 module.exports.getFIO = () => {
-    return getLastName() + " " + getFullName();
+    return this.getLastName() + " " + this.getFullName();
 };
