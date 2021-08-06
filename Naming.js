@@ -19,4 +19,4 @@ module.exports.getLastName = () => {
     const names = ["Иванов", "Петров", "Сидоров", "Лебедев", "Попов",
         "Коршунов", "Смирнов", "Кузнецов", "Соколов", "Новиков", "Волков"];
     return names[Math.floor(Math.random() * (names.length))];
-}
+};

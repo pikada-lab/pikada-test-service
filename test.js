@@ -52,4 +52,35 @@ describe('Health', () => {
                 });
         });
     });
+
+    describe('[GET] /v1/name?lastName', () => {
+        it('it should GET name and last name', (done) => {
+            agent
+                .get('/v1/name?lastName')
+                .end((err, res) => {
+                    expect(err, "We have error").to.be.null;
+                    expect(res, "We have not status 200").to.have.status(200);
+                    expect(res, "The response mast be not a php session").to.not.have.cookie('PHPSESSID'); 
+                    expect(res, "We have error").to.be.string;  
+                    expect(res).to.be.match(/(\w+)/i, "We have two words");
+                    done();
+                });
+        });
+    });
+
+    describe('[GET] /v1/name?secondName', () => {
+        it('it should GET name and second name', (done) => {
+            agent
+                .get('/v1/name?secondName')
+                .end((err, res) => {
+                    expect(err, "We have error").to.be.null;
+                    expect(res, "We have not status 200").to.have.status(200);
+                    expect(res, "The response mast be not a php session").to.not.have.cookie('PHPSESSID'); 
+                    expect(res, "We have error").to.be.string;  
+                    expect(res).to.be.match(/(\w+)/i, "We have two words");
+                    done();
+                });
+        });
+    });
+
 });

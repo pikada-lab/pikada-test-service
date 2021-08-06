@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const { getName, getFullName } = require("./Naming");  
+const { getName, getFullName, getLastName, getSecondName } = require("./Naming");  
 
 app.set('port', process.env.PORT || 3000);
 app.use((req, res, next) => {
@@ -21,7 +21,11 @@ app.get('/v1/name', (req, res) => {
     const params = new URL(req.url,'http://localhost').searchParams;
     if(params.has("fullName")) {
         res.send(getFullName());
-    } else {
+    } else if(params.has("lastName")) {
+        res.send(getLastName());
+    } else if(params.has("secondName")) {
+        res.send(getSecondName());
+    } else  {
         res.send(getName());
     }
 });
