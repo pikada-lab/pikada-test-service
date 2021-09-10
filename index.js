@@ -15,7 +15,6 @@ app.use((req, res, next) => {
     next();
 });
 
-
 /**
  * Разбирает URL и возвращает параметры
  * @param {string} url 
