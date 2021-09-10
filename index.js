@@ -16,6 +16,11 @@ app.use((req, res, next) => {
 });
 
 
+/**
+ * Разбирает URL 
+ * @param {*} url 
+ * @returns 
+ */
 const ParamsParser = (url) => {
     return new URL(url, 'http://localhost').searchParams;
 };
