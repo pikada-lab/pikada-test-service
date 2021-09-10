@@ -100,7 +100,8 @@ describe("pikada-test-service", () => {
                         expect(err, "We have error").to.be.null;
                         expect(res, "We have not status 200").to.have.status(200);
                         expect(res, "The response mast be not a php session").to.not.have.cookie('PHPSESSID');
-                        expect(res.text).to.be.match(/(\[(\D+)(\s*,\D+)?\])/i, "We have JSON array");
+                        expect(res.text).to.be.match(/(\[(\D+)(\s*,\D+)?\])/i, 'We have JSON array');
+                        expect(JSON.parse(res.text).length).to.be.equal(10, 'We have 10 items');
                         done();
                     });
             });
