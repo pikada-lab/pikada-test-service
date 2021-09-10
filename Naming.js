@@ -49,6 +49,10 @@ module.exports.getLastName = () => {
     return random(this.LAST_NAME);
 };
 
+/**
+ *  Возвращает случайную Имя отчество
+ * @returns string
+ */
 module.exports.getFullName = () => {
     return this.getName() + " " + this.getSecondName();
 };
