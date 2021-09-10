@@ -25,6 +25,10 @@ const random = (arr) => {
     return arr[Math.floor(Math.random() * (arr.length))];
 };
 
+/**
+ * Возвращает случайное имя
+ * @returns string
+ */
 module.exports.getName = () => {
     return random(this.NAME);
 };
