@@ -33,6 +33,10 @@ module.exports.getName = () => {
     return random(this.NAME);
 };
 
+/**
+ *  Возвращает случайное отчество
+ * @returns string
+ */
 module.exports.getSecondName = () => {
     return random(this.SECOND_NAME);
 };
