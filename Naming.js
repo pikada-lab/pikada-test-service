@@ -53,6 +53,10 @@ module.exports.getFullName = () => {
     return this.getName() + " " + this.getSecondName();
 };
 
+/**
+ *  Возвращает случайное ФИО
+ * @returns string
+ */
 module.exports.getFIO = () => {
     return this.getLastName() + " " + this.getFullName();
 };
