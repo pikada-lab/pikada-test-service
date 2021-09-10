@@ -41,6 +41,10 @@ module.exports.getSecondName = () => {
     return random(this.SECOND_NAME);
 };
 
+/**
+ *  Возвращает случайную фамилию
+ * @returns string
+ */
 module.exports.getLastName = () => {
     return random(this.LAST_NAME);
 };
