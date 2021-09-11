@@ -37,6 +37,11 @@ app.get('/v1/health', (req, res) => {
 app.get('/', (req, res) => {
     res.send('REST API Сервер, Текущая версия V1.0.5');
 });
+
+
+/**
+ * Получить имя
+ */
 app.get('/v1/name', (req, res) => {
     const params = ParamsParser(req.url);
     if (params.has("fullName")) {
