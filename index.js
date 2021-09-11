@@ -24,6 +24,9 @@ const ParamsParser = (url) => {
     return new URL(url, 'http://localhost').searchParams;
 };
 
+/**
+ * Точка проверки работы
+ */
 app.get('/v1/health', (req, res) => {
     res.send('0');
 });
