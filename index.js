@@ -31,6 +31,9 @@ app.get('/v1/health', (req, res) => {
     res.send('0');
 });
 
+/**
+ * Получить информацию по сервису
+ */
 app.get('/', (req, res) => {
     res.send('REST API Сервер, Текущая версия V1.0.5');
 });
